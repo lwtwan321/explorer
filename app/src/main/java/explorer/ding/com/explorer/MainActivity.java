@@ -4,6 +4,9 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
@@ -11,12 +14,17 @@ import com.android.volley.VolleyError;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import butterknife.BindView;
+import butterknife.OnClick;
 import explorer.ding.com.explorer.module.BaseActivity;
 import explorer.ding.com.explorer.net.NetworkResponseInterface;
 import explorer.ding.com.explorer.net.RequestFactory;
 import explorer.ding.com.explorer.utils.MLog;
 
 public class MainActivity extends BaseActivity implements NetworkResponseInterface {
+
+
+
 
     @Override
     public void widgetClick(View v) {
