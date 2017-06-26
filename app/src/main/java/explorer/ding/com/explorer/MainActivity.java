@@ -1,7 +1,9 @@
 package explorer.ding.com.explorer;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
@@ -9,16 +11,45 @@ import com.android.volley.VolleyError;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import explorer.ding.com.explorer.module.BaseActivity;
 import explorer.ding.com.explorer.net.NetworkResponseInterface;
 import explorer.ding.com.explorer.net.RequestFactory;
+import explorer.ding.com.explorer.utils.MLog;
 
-public class MainActivity extends AppCompatActivity implements NetworkResponseInterface {
+public class MainActivity extends BaseActivity implements NetworkResponseInterface {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public void widgetClick(View v) {
 
+    }
+
+    @Override
+    public void initParms(Bundle parms) {
+
+    }
+
+    @Override
+    public View bindView() {
+        return null;
+    }
+
+    @Override
+    public int bindLayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public void initView(View view) {
+
+    }
+
+    @Override
+    public void setListener() {
+
+    }
+
+    @Override
+    public void doBusiness(Context mContext) {
         RequestFactory.makeObjectRequest(
                 this,
                 Request.Method.GET,
@@ -37,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements NetworkResponseIn
 
     @Override
     public void onSuccess(String tag, Object object, JSONObject response) {
-
+        MLog.i("ding",response.toString());
     }
 
     @Override
