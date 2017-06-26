@@ -73,7 +73,6 @@ public class RequestFactory {
         }
     }
 
-
     /**
      * @param method HTTP Request Method, i.e, GET
      */
@@ -237,12 +236,10 @@ public class RequestFactory {
 
         };
 
-
         req.setRetryPolicy(makeRetryPolicy());
 
         // ADD REQUEST TO QUE
         RequestServer.addToRequestQueue(req, que_tag);
-
     }
 
     private static int responseCode = -1;
@@ -380,7 +377,6 @@ public class RequestFactory {
 
         // ADD REQUEST TO QUE
         RequestServer.addToRequestQueue(req, que_tag);
-
         return req;
     }
 

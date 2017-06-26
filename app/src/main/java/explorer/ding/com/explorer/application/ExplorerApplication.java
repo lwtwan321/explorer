@@ -18,6 +18,11 @@ public class ExplorerApplication extends MultiDexApplication {
     protected static ExplorerApplication mInstance;
     private RequestQueue mRequestQueue;
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mInstance = this;
+    }
 
     public static synchronized ExplorerApplication getInstance() {
         return mInstance;
